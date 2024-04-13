@@ -9,21 +9,25 @@ const RestaurantCard = (props) => {
     avgRating,
     cuisines,
     costForTwo,
-    deliveryTime,
+    sla,
   } = resData?.info;
-
+  console.log(sla);
   return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
+    <div className="res-card bg-gray-200 p-4 m-4 rounded-lg shadow-md w-[300px] my-4 hover:bg-gray-300" >
       <img
-        className="res-logo"
+        className="res-logo w-full h-40 object-cover mb-4 rounded "
         alt="res-logo"
         src={CDN_URL + cloudinaryImageId}
       />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} stars</h4>
-      <h4>₹{costForTwo / 100} FOR TWO</h4>
-      <h4>{deliveryTime} minutes</h4>
+      <h3 className="text-xl font-semibold">{name}</h3>
+      <h4 className="text-gray-600">{cuisines.join(", ")}</h4>
+      <div className="flex items-center mt-2">
+        <span className="mr-2">{avgRating} stars</span>
+        <span className="text-gray-600">{costForTwo}</span>
+      </div>
+      <div className="mt-2">
+        <span className="text-gray-600">{sla.slaString} </span>
+      </div>
     </div>
   );
 };
