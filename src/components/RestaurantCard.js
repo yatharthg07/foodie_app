@@ -32,4 +32,23 @@ const RestaurantCard = (props) => {
   );
 };
 
+export const withPromtedLabel = (RestaurantCard) => {
+  return (props) => {
+    const { resData } = props;
+    const { aggregatedDiscountInfoV3 } = resData?.info;
+
+    return (
+      <div className="relative">
+        <label className="absolute bg-black text-white m-2 p-2 rounded-lg">
+          {aggregatedDiscountInfoV3.header} - {aggregatedDiscountInfoV3.subHeader}
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
+
+
+
+
 export default RestaurantCard;
