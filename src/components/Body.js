@@ -21,10 +21,10 @@ const Body = () => {
     const json = await data.json();
     //   console.log(json);
     setListOfRestraunt(
-      json.data.cards[3].card.card.gridElements.infoWithStyle.restaurants
+      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
     );
     setFilteredList(
-      json.data.cards[3].card.card.gridElements.infoWithStyle.restaurants
+      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
     );
   };
   // console.log(resList)
