@@ -9,7 +9,7 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 const AppLayout = () => {
   return (
-    <div className="app">
+    <div className="app min-h-screen bg-green-100 p-2">
       <Header />
       <Outlet />
     </div>

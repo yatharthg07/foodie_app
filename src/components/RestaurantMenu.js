@@ -5,11 +5,12 @@ import { MENU_API } from "../utils/constants";
 import useRestaurantMenu from "../utils/useRestaurentMenu";
 import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
+  const [activeIndex,setActiveIndex]=useState(null);
 
 
   const { resId } = useParams();
   const resInfo=useRestaurantMenu(resId);
-  console.log(resInfo);
+  // console.log(resInfo);
   const categories =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
@@ -31,11 +32,15 @@ const RestaurantMenu = () => {
         {cuisines.join(", ")} - {costForTwoMessage}
       </p>
       {/* categories accordions */}
-      {categories.map((category, index) => (
+      {categories.map((category,index) => (
         // controlled component
         <RestaurantCategory
           key={category?.card?.card.title}
           data={category?.card?.card}
+          isActive={activeIndex==index}
+          onClick={(isActive)=>isActive?setActiveIndex(null):setActiveIndex(index)}
+
+
         />
       ))}
     </div>

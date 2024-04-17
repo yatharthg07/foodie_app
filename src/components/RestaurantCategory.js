@@ -1,10 +1,9 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ data }) => {
-const[showItems,setShowItems]=useState(false);
+const RestaurantCategory = ({ data,isActive,onClick }) => {
   const handleClick = () => {
-    setShowItems(!showItems);
+    onClick(isActive);
   };
   return (
     <div>
@@ -17,10 +16,10 @@ const[showItems,setShowItems]=useState(false);
           <span className="font-bold text-lg">
             {data.title} ({data.itemCards.length})
           </span>
-          <span>⬇️</span>
+          <span>{isActive?"⬆️":"⬇"}</span>
         </div>
 
-        {showItems && <ItemList items={data.itemCards} />}
+        {isActive && <ItemList items={data.itemCards} />}
       </div>
     </div>
   );
