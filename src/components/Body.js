@@ -5,6 +5,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
+
 const Body = () => {
   // Local State Variables
   const [listOfRestaurants, setListOfRestaurants] = useState([]);

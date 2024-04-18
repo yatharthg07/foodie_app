@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import '../Shimmer.css'; // You can create a CSS file for styling
+import React, { useEffect, useState } from "react";
+import "../Shimmer.css";
 
 const Shimmer = () => {
-
-
   return (
     <div className="shimmer-container ">
       <div className="shimmer res-card"></div>

@@ -3,17 +3,11 @@ import { CDN_URL } from "../utils/constants";
 const RestaurantCard = (props) => {
   const { resData } = props;
 
-  const {
-    cloudinaryImageId,
-    name,
-    avgRating,
-    cuisines,
-    costForTwo,
-    sla,
-  } = resData?.info;
+  const { cloudinaryImageId, name, avgRating, cuisines, costForTwo, sla } =
+    resData?.info;
   console.log(sla);
   return (
-    <div className="res-card bg-teal-100 p-4 m-4 rounded-lg shadow-md w-[300px] my-4 hover:bg-teal-200" >
+    <div className="res-card bg-teal-100 p-4 m-4 rounded-lg shadow-md w-[300px] my-4  hover:bg-teal-200 hover:transform hover:translate-y-2 transition duration-300 ">
       <img
         className="res-logo w-full h-40 object-cover mb-4 rounded "
         alt="res-logo"
@@ -39,16 +33,14 @@ export const withPromtedLabel = (RestaurantCard) => {
 
     return (
       <div className="relative">
-        <label className="absolute bg-black text-white m-2 p-2 rounded-lg">
-          {aggregatedDiscountInfoV3.header} - {aggregatedDiscountInfoV3.subHeader}
+        <label className="absolute bg-black text-white m-2 p-2 rounded-lg z-10 ">
+          {aggregatedDiscountInfoV3.header} -{" "}
+          {aggregatedDiscountInfoV3.subHeader}
         </label>
         <RestaurantCard {...props} />
       </div>
     );
   };
 };
-
-
-
 
 export default RestaurantCard;
